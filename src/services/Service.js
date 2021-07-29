@@ -1,19 +1,19 @@
-import http from '../http-common';
+import http from '../utils/http-common';
+    
+const getAllBulkup = () => {
+    return http.get("/meals/bulkup");
+}
 
-const getAll = () => {
-    return http.get("/meals");
+const getAllStay = () => {
+    return http.get("/meals/stay");
+}
+
+const getAllDiet = () => {
+    return http.get("/meals/diet");
 }
 
 const create = data => {
-    return http.post("/",data);
+    return http.post("/meals/addmeal",data);
 };
 
-const removeAll = () => {
-    return http.delete("/meals");
-  };
-
-const findByName = name =>{
-    return http.get(`/meals?name=${name}`)
-};
-
-export default {getAll, create, findByName, removeAll};
+export default {getAllBulkup,getAllStay,getAllDiet,create};
