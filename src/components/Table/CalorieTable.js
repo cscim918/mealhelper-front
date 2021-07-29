@@ -1,10 +1,7 @@
 import React from 'react';
-import { useTable } from 'react-table';
-import useData from './useData';
-import useColumns from './useColumns';
-import './ManageTable.css';
+import './CalorieTable.css';
 
-function ManageTable() {
+function CalorieTable() {
   return (
     <table>
       <tr>
@@ -50,4 +47,4 @@ function ManageTable() {
   );
 }
 
-export default ManageTable;
+export default CalorieTable;
