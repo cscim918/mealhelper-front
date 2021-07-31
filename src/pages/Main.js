@@ -56,6 +56,6 @@ const Category = styled.div`
 `;
 const Category2 = styled.div`
   margin: 10px;
-  padding-right: 15px;
+  padding-right: 18px;
   font-size: 20px;
 `;

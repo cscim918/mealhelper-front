@@ -92,6 +92,12 @@ function StayList(){
               </label>{" "}
               {currentMeal.calorie}kcal
             </div>
+            <div>
+              <label>
+                <strong>gender:</strong>
+              </label>{" "}
+              {currentMeal.gender}
+            </div>
           </div>
         ) : (
           <div>
