@@ -4,9 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Main from '../pages/Main';
 import AddMeal from '../pages/AddMeal';
-import BulkupList from './../pages/BulkupList';
-import StayList from './../pages/StayList';
-import DietList from './../pages/DietList';
+import BulkupList from '../pages/Bulkup';
+import StayList from '../pages/Stay';
+import DietList from '../pages/Diet';
 
 function App() {
   return (
