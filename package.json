@@ -10,6 +10,7 @@
     "antd": "^4.16.10",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "dotenv": "^8.2.0",
     "polished": "^4.1.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -29,7 +30,6 @@
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync ./build s3://mealhelper --profile=mealhelper",
     "invalidate": "aws cloudfront create-invalidation --profile=mealhelper --distribution-id E2R89VJU9NR6GQ --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
-
   },
   "eslintConfig": {
     "extends": [
