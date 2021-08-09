@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import Service from '../services/Service';
 
@@ -32,7 +31,7 @@ function StayList() {
   };
 
   return (
-    <div className="list row">
+    <div className="list row" style={{display: 'flex'}}>
       <Header />
       <div className="col-md-6">
         <h3>유지 식단</h3>
@@ -44,7 +43,7 @@ function StayList() {
               onClick={() => setActiveMeal(meal, index)}
               key={index}
             >
-              {meal.name}
+              {meal.gender == 'Man' ? '남자' : '' || meal.gender == 'Woman' ? '여자': ''} {meal.calorie}kcal
             </li>
           ))}
         <br />
@@ -57,8 +56,6 @@ function StayList() {
         dinner={currentMeal.dinner}
         snack1={currentMeal.snack1}
         snack2={currentMeal.snack2}
-        gender={currentMeal.gender}
-        calorie={currentMeal.calorie}
       />
     </div>
   );

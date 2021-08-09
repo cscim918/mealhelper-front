@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Service from '../services/Service';
 
 import Meal from '../components/Meal';
 import Header from '../components/Header';
-
-import background from '../assets/meal.jpg';
 
 function BulkupList() {
   const [meals, setMeals] = useState([]);

@@ -34,7 +34,7 @@ const Meal = ({ morning, snack1, lunch, snack2, dinner, gender, calorie}) => {
         </label>{' '}
         {dinner}
       </div>
-      <div>
+      {/* <div>
         <label>
           <strong>성별:</strong>
         </label>{' '}
@@ -45,7 +45,7 @@ const Meal = ({ morning, snack1, lunch, snack2, dinner, gender, calorie}) => {
           <strong>칼로리:</strong>
         </label>{' '}
         {calorie}kcal
-      </div>
+      </div> */}
     </div>
   );
 };
