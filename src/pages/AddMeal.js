@@ -155,6 +155,19 @@ const AddMeal = () => {
           </div>
 
           <div className="form-group">
+            <label htmlFor="snack3">snack3</label>
+            <input
+              type="text"
+              className="form-control"
+              id="snack3"
+              required
+              value={meal.snack3}
+              onChange={handleInputChange}
+              name="snack3"
+            />
+          </div>
+
+          <div className="form-group">
             <label htmlFor="calorie">calorie</label>
             <input
               type="text"
@@ -173,6 +186,7 @@ const AddMeal = () => {
                 <option></option>
                 <option value="Man">Man</option>
                 <option value="Woman">Woman</option>
+                <option value="Both">Both</option>
             </select>
           </div>
 

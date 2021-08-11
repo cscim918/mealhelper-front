@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import Service from '../services/Service';
+import { Helmet } from 'react-helmet';
+import * as Sentry from "@sentry/react";
 
 import Meal from '../components/Meal';
 import Header from '../components/Header';
@@ -21,7 +23,7 @@ function DietList() {
         console.log(response.data);
       })
       .catch((e) => {
-        console.log(e);
+        Sentry.captureException(e);
       });
   };
 
@@ -32,6 +34,7 @@ function DietList() {
 
   return (
     <div className="list row">
+      <Helmet><title>다이어트식단</title></Helmet>
       <Header />
       <div className="col-md-6">
         <h3>다이어트 식단</h3>
@@ -43,7 +46,15 @@ function DietList() {
               onClick={() => setActiveMeal(meal, index)}
               key={index}
             >
-              {meal.name}
+              [
+              {meal.gender == 'Man'
+                ? '남'
+                : '' || meal.gender == 'Woman'
+                ? '여'
+                : '' || meal.gender == 'Both'
+                ? '남/여'
+                : ''}
+              ] {meal.name} - {meal.calorie == 0 ? '개인에 맞게' : `${meal.calorie}kcal`}
             </li>
           ))}
       </div>
@@ -54,8 +65,7 @@ function DietList() {
         dinner={currentMeal.dinner}
         snack1={currentMeal.snack1}
         snack2={currentMeal.snack2}
-        gender={currentMeal.gender}
-        calorie={currentMeal.calorie}
+        snack3={currentMeal.snack3}
       />
     </div>
   );

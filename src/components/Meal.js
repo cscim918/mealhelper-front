@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Meal = ({ morning, snack1, lunch, snack2, dinner, gender, calorie}) => {
+const Meal = ({ morning, snack1, lunch, snack2, dinner, snack3 }) => {
   return (
     <div>
       <br/>
@@ -12,15 +12,21 @@ const Meal = ({ morning, snack1, lunch, snack2, dinner, gender, calorie}) => {
       </div>
       <div>
         <label>
-          <strong>간식1:</strong>
-        </label>{' '}
-        {snack1}
-      </div>
-      <div>
-        <label>
           <strong>점심:</strong>
         </label>{' '}
         {lunch}
+      </div>
+      <div>
+        <label>
+          <strong>저녁:</strong>
+        </label>{' '}
+        {dinner}
+      </div>
+      <div>
+        <label>
+          <strong>간식1:</strong>
+        </label>{' '}
+        {snack1}
       </div>
       <div>
         <label>
@@ -30,9 +36,9 @@ const Meal = ({ morning, snack1, lunch, snack2, dinner, gender, calorie}) => {
       </div>
       <div>
         <label>
-          <strong>저녁:</strong>
+          <strong>간식3:</strong>
         </label>{' '}
-        {dinner}
+        {snack3}
       </div>
       {/* <div>
         <label>
@@ -59,6 +65,7 @@ Meal.defaultProps = {
   dinner: ``,
   snack1: ``,
   snack2: ``,
+  snack3: ``,
   gender: ``,
   calorie: 0
 };

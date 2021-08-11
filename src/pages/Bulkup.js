@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Service from '../services/Service';
+import { Helmet } from 'react-helmet';
 
 import Meal from '../components/Meal';
 import Header from '../components/Header';
@@ -31,26 +32,41 @@ function BulkupList() {
 
   return (
     <div className="list row">
-      <Header/>
+      <Helmet><title>벌크업식단</title></Helmet>
+      <Header />
       <div className="col-md-6">
         <h3>벌크업 식단</h3>
-        <br/>
+        <br />
         {meals &&
-            meals.map((meal, index) => (
-              <li
-                className={
-                  "list-group-item " + (index === currentIndex ? "active" : "")
-                }
-                onClick={() => setActiveMeal(meal, index)}
-                key={index}
-              >
-                {meal.name}
-              </li>
-        ))}
-        <br/>
+          meals.map((meal, index) => (
+            <li
+              className={'list-group-item ' + (index === currentIndex ? 'active' : '')}
+              onClick={() => setActiveMeal(meal, index)}
+              key={index}
+            >
+              [
+              {meal.gender == 'Man'
+                ? '남'
+                : '' || meal.gender == 'Woman'
+                ? '여'
+                : '' || meal.gender == 'Both'
+                ? '남/여'
+                : ''}
+              ] {meal.name} - {meal.calorie == 0 ? '개인에 맞게' : `${meal.calorie}kcal`}
+            </li>
+          ))}
+        <br />
       </div>
-      <br/>
-      <Meal name={currentMeal.name} morning={currentMeal.morning} lunch={currentMeal.lunch} dinner={currentMeal.dinner} snack1={currentMeal.snack1} snack2={currentMeal.snack2} gender={currentMeal.gender} calorie={currentMeal.calorie}/>
+      <br />
+      <Meal
+        name={currentMeal.name}
+        morning={currentMeal.morning}
+        lunch={currentMeal.lunch}
+        dinner={currentMeal.dinner}
+        snack1={currentMeal.snack1}
+        snack2={currentMeal.snack2}
+        snack3={currentMeal.snack3}
+      />
     </div>
   );
 }

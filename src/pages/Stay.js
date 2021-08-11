@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Helmet } from 'react-helmet';
 import Service from '../services/Service';
 
 import Meal from '../components/Meal';
@@ -31,7 +31,8 @@ function StayList() {
   };
 
   return (
-    <div className="list row" style={{display: 'flex'}}>
+    <div className="list row">
+      <Helmet><title>유지식단</title></Helmet>
       <Header />
       <div className="col-md-6">
         <h3>유지 식단</h3>
@@ -43,7 +44,15 @@ function StayList() {
               onClick={() => setActiveMeal(meal, index)}
               key={index}
             >
-              {meal.gender == 'Man' ? '남자' : '' || meal.gender == 'Woman' ? '여자': ''} {meal.calorie}kcal
+              [
+              {meal.gender == 'Man'
+                ? '남'
+                : '' || meal.gender == 'Woman'
+                ? '여'
+                : '' || meal.gender == 'Both'
+                ? '남/여'
+                : ''}
+              ] {meal.name} - {meal.calorie == 0 ? '개인에 맞게' : `${meal.calorie}kcal`}
             </li>
           ))}
         <br />
@@ -56,6 +65,7 @@ function StayList() {
         dinner={currentMeal.dinner}
         snack1={currentMeal.snack1}
         snack2={currentMeal.snack2}
+        snack3={currentMeal.snack3}
       />
     </div>
   );

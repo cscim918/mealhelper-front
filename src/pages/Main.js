@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 import CalorieTable from '../components/Table/CalorieTable';
 import Header from '../components/Header';
@@ -11,6 +12,7 @@ import './Main.css';
 const Main = () => {
   return (
     <div class="c">
+      <Helmet><title>밀헬퍼</title></Helmet>
       <Header/>
       <h2 align="center" style={{fontFamily:'verdana', fontWeight: 'bold', color: 'green'}}>식단 추천 페이지</h2>
       <div class="a"/>
